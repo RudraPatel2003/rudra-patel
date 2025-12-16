@@ -1,0 +1,26 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="generator" content={Astro.generator} />
+    <title>Rudra Patel</title>
+
+    <meta
+      name="description"
+      content="Rudra Patel is a full-stack software engineer"
+    />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body class="min-h-screen bg-bg text-primary">
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,22 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import BackButtonIcon from "../icons/back-button-icon.astro";
+
+type Props = {
+  text: string;
+  href: string;
+  attributes?: HTMLAttributes<"a">;
+};
+
+const { text, href, attributes } = Astro.props;
+---
+
+<a
+  href={href}
+  class="flex items-center gap-2 text-xl font-medium text-accent"
+  {...attributes}
+>
+  <BackButtonIcon />
+  <span>{text}</span>
+</a>

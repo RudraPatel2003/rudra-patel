@@ -1,0 +1,27 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = {
+  href: string;
+  text: string;
+  highlightedText: string;
+  attributes?: HTMLAttributes<"a">;
+};
+
+const { href, text, highlightedText, attributes } = Astro.props;
+---
+
+<li>
+  <a
+    href={href}
+    class="group flex gap-3 leading-relaxed transition-colors duration-150 hover:text-accent"
+    {...attributes}
+  >
+    <span
+      class="text-accent transition-transform duration-150 group-hover:translate-x-0.5"
+      >&gt;</span
+    >
+    <span>{text} <span class="text-accent italic">{highlightedText}</span></span
+    >
+  </a>
+</li>

@@ -1,0 +1,43 @@
+---
+import z from "zod";
+
+import BackButton from "../ui/back-button.astro";
+import projectData from "./project-data.json";
+import ProjectSection from "./project-section.astro";
+
+const projectSchema = z.object({
+  name: z.string(),
+  description: z.string(),
+  link: z.string(),
+});
+
+const sectionSchema = z.object({
+  sectionName: z.string(),
+  sectionSubtitle: z.string(),
+  projects: z.array(projectSchema),
+});
+
+export type Section = z.infer<typeof sectionSchema>;
+
+const projectDataSchema = z.array(sectionSchema);
+
+const validatedProjectData = projectDataSchema.parse(projectData);
+---
+
+<main class="flex min-h-screen justify-center">
+  <section class="mx-auto mt-4 max-w-[700px] p-4">
+    <header class="mb-2">
+      <BackButton text="Back" href="/" />
+      <h1 class="my-4 text-4xl font-semibold">Projects</h1>
+      <p class="mb-4 text-lg text-secondary">
+        A collection of projects I've worked on
+      </p>
+    </header>
+
+    {
+      validatedProjectData.map((section) => (
+        <ProjectSection section={section} />
+      ))
+    }
+  </section>
+</main>
