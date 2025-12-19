@@ -1,0 +1,23 @@
+---
+interface Props {
+  href: string;
+  text: string;
+  highlightedText: string;
+}
+
+const { href, text, highlightedText } = Astro.props;
+---
+
+<li>
+  <a
+    href={href}
+    class="group flex gap-3 items-baseline leading-relaxed transition-colors duration-150 hover:text-accent"
+  >
+    <span
+      class="text-accent transition-transform duration-150 group-hover:translate-x-0.5"
+      >&gt;</span
+    >
+    <span>{text} <span class="italic text-accent">{highlightedText}</span></span
+    >
+  </a>
+</li>
