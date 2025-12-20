@@ -1,0 +1,96 @@
+---
+import { z } from "zod";
+
+import GitHubIcon from "../icons/github-icon.astro";
+import LinkedInIcon from "../icons/linkedin-icon.astro";
+import Button from "./button.astro";
+import homePageData from "./home-page-data.json";
+import ListItem from "./list-item.astro";
+
+const homePageDataSchema = z.object({
+  personalInfo: z.object({
+    email: z.string(),
+    gitHubLink: z.string(),
+    linkedInLink: z.string(),
+  }),
+  jobInfo: z.object({
+    jobTitle: z.string(),
+    companyName: z.string(),
+    companyLink: z.string(),
+  }),
+});
+
+const validatedHomePageData = homePageDataSchema.parse(homePageData);
+
+const { personalInfo, jobInfo } = validatedHomePageData;
+---
+
+<main class="min-h-screen min-w-screen flex justify-center items-center">
+  <section class="max-w-[700px] mx-auto p-4">
+    <header class="mb-2">
+      <h1 class="text-4xl font-semibold mb-4">Hi, I'm Rudra.</h1>
+      <p class="text-secondary text-xl">I am a full-stack software engineer</p>
+    </header>
+
+    <ul class="space-y-3 text-lg text-secondary mb-4">
+      <ListItem
+        href="/projects"
+        text="check out my"
+        highlightedText="projects"
+      />
+      <ListItem
+        href="/resume.pdf"
+        text="view my"
+        highlightedText="resume"
+        attributes={{
+          target: "_blank",
+          rel: "noreferrer",
+        }}
+      />
+    </ul>
+
+    <p class="text-secondary mb-6 text-lg">
+      I'm currently an {jobInfo.jobTitle}
+      <a
+        class="text-accent font-medium"
+        href={jobInfo.companyLink}
+        target="_blank"
+        rel="noreferrer"
+      >
+        @ {jobInfo.companyName}
+      </a>
+    </p>
+
+    <footer class="flex flex-wrap gap-4 text-base">
+      <a href={personalInfo.gitHubLink} target="_blank" rel="noreferrer">
+        <GitHubIcon
+          attributes={{
+            class: "hover:text-accent transition-colors duration-150",
+          }}
+        />
+      </a>
+      <a href={personalInfo.linkedInLink} target="_blank" rel="noreferrer">
+        <LinkedInIcon
+          attributes={{
+            class: "hover:text-accent transition-colors duration-150",
+          }}
+        />
+      </a>
+      <Button
+        variant="primary"
+        href="https://github.com/RudraPatel2003"
+        text="My GitHub"
+        attributes={{
+          target: "_blank",
+          rel: "noreferrer",
+        }}
+      />
+
+      <Button
+        variant="secondary"
+        href="mailto:patelrudra2003@gmail.com"
+        text="Contact Me"
+      />
+    </footer>
+  </section>
+</main>

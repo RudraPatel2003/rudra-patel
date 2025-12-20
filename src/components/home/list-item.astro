@@ -1,12 +1,12 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
-interface Props {
+type Props = {
   href: string;
   text: string;
   highlightedText: string;
   attributes?: HTMLAttributes<"a">;
-}
+};
 
 const { href, text, highlightedText, attributes } = Astro.props;
 ---
@@ -14,7 +14,7 @@ const { href, text, highlightedText, attributes } = Astro.props;
 <li>
   <a
     href={href}
-    class="flex gap-3 leading-relaxed transition-colors duration-150 hover:text-accent"
+    class="group flex gap-3 leading-relaxed transition-colors duration-150 hover:text-accent"
     {...attributes}
   >
     <span

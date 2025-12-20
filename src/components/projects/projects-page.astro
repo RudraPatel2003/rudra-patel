@@ -1,8 +1,9 @@
 ---
-import BackButton from "../ui/BackButton.astro";
-import projectData from "./project-data.json";
 import z from "zod";
-import ProjectSection from "./ProjectSection.astro";
+
+import BackButton from "../ui/back-button.astro";
+import projectData from "./project-data.json";
+import ProjectSection from "./project-section.astro";
 
 const projectSchema = z.object({
   name: z.string(),

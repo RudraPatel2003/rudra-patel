@@ -1,12 +1,12 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
-interface Props {
+type Props = {
   href: string;
   text: string;
   variant: "primary" | "secondary";
   attributes?: HTMLAttributes<"a">;
-}
+};
 
 const { href, text, variant, attributes } = Astro.props;
 
