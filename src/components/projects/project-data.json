@@ -1,0 +1,55 @@
+[
+  {
+    "sectionName": "Developer Tools",
+    "sectionSubtitle": "Tools to make life easier (for you and me)",
+    "projects": [
+      {
+        "name": "Prettier Java Plugin",
+        "description": "A VS Code plugin that uses prettier-plugin-java to format .java files",
+        "link": "https://github.com/RudraPatel2003/prettier-plugin-java-vscode"
+      },
+      {
+        "name": "FuzzyScore.NET",
+        "description": "A NuGet package that ports the Apache Commons \"FuzzyScore\" text similarity algorithm to .NET",
+        "link": "https://github.com/RudraPatel2003/dotnet-fuzzy-score"
+      },
+      {
+        "name": "Repository Quick Launcher",
+        "description": "A Flow Launcher plugin to quickly open codebases using VS Code or Cursor",
+        "link": "https://github.com/RudraPatel2003/repository-quick-launcher"
+      },
+      {
+        "name": "GitHub Repository Viewer",
+        "description": "A Flow Launcher plugin to quickly navigate to your personal repositories",
+        "link": "https://github.com/RudraPatel2003/github-repository-viewer"
+      }
+    ]
+  },
+  {
+    "sectionName": "For Fun",
+    "sectionSubtitle": "Projects that don't serve a purpose but helped me learn something new",
+    "projects": [
+      {
+        "name": "Personal AI Chatbot",
+        "description": "A fully local, Docker-first personal AI chatbot built with a microservice architecture",
+        "link": "https://github.com/RudraPatel2003/personal-ai-chatbot"
+      },
+      {
+        "name": "Personal Website",
+        "description": "My personal website built with Astro and Tailwind CSS",
+        "link": "https://github.com/RudraPatel2003/rudra-patel"
+      }
+    ]
+  },
+  {
+    "sectionName": "Open Source Contributions",
+    "sectionSubtitle": "Contributions I have made to other people's projects",
+    "projects": [
+      {
+        "name": "Bruno",
+        "description": "Added a new feature to Bruno that allows users to copy environment variables from the request pane's popover",
+        "link": "https://github.com/usebruno/bruno/pull/5416"
+      }
+    ]
+  }
+]

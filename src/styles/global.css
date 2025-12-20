@@ -1,8 +1,22 @@
 @import "tailwindcss";
 
+/* Website Colors */
 @theme {
-	--color-bg: #071a38;
-	--color-primary: #b7d0f7;
-	--color-secondary: #6d88b0;
-	--color-accent: #57ecc3;
+  --color-bg: #071a38;
+  --color-primary: #b7d0f7;
+  --color-secondary: #6d88b0;
+  --color-accent: #57ecc3;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-secondary);
+  border-radius: 1rem;
 }
