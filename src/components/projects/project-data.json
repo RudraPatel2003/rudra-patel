@@ -15,7 +15,7 @@
       },
       {
         "name": "Repository Quick Launcher",
-        "description": "A Flow Launcher plugin to quickly open codebases using VS Code or Cursor",
+        "description": "A Flow Launcher plugin to quickly open codebases using your IDE of choice (VS Code, Cursor, Zed, etc.)",
         "link": "https://github.com/RudraPatel2003/repository-quick-launcher"
       },
       {
